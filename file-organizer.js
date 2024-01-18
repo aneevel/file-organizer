@@ -32,3 +32,19 @@ if (!fs.existsSync(outputDir))
     console.log(`${outputDir} found!`);
 }
 
+// Begin reading files
+processFiles();
+
+function processFiles() {
+    let files;
+    try { 
+        files = fs.readdirSync(inputDir,);
+    } catch (error) {
+        console.error(`Unable to read files with Error: ${error}`);
+    }
+
+    files = files.filter(file => path.extname(file) === '.jpg')
+    files.forEach(file => {
+        console.log(`${file}`);
+    });
+}
