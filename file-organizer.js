@@ -19,6 +19,16 @@ if (!fs.existsSync(inputDir))
     process.exit(1);
 }
 
-console.log(`Placing files from ${inputDir} into ${outputDir}`);
-
 // A non existent output directory should be created
+if (!fs.existsSync(outputDir))
+{
+    console.log(`${outputDir} not found: Creating directory...`);
+    try {
+        fs.mkdirSync(outputDir, { recursive: false });
+    } catch (error) {
+        console.error(`Unable to create outpdir with Error: ${error}`);
+    }
+} else {
+    console.log(`${outputDir} found!`);
+}
+
