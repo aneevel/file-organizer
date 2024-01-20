@@ -3,6 +3,8 @@ const path = require('path');
 
 const basePath = 'C:\\';
 
+const fileExtensions = [ '.jpg', '.jpeg', '.png', '.gif'];
+
 if (process.argv.length !== 4)
 {
     console.error("Invalid input: file-organizer must be invoked as `node file-organizer.js {inputDirectory} {outputDirectory}");
@@ -43,8 +45,12 @@ function processFiles() {
         console.error(`Unable to read files with Error: ${error}`);
     }
 
-    files = files.filter(file => path.extname(file) === '.jpg')
+    files = files.filter((file) => hasValidExtension(file))
     files.forEach(file => {
         console.log(`${file}`);
     });
+}
+
+function hasValidExtension(filename) {
+    return fileExtensions.includes(path.extname(filename))
 }
