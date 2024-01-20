@@ -47,7 +47,12 @@ function processFiles() {
 
     files = files.filter((file) => hasValidExtension(file))
     files.forEach(file => {
-        console.log(`${file}`);
+        try {
+            console.log(`Moving ${file} to ${outputDir}`);
+            fs.renameSync(path.join(inputDir, file), path.join(outputDir, file), () => {})
+        } catch (error) {
+            console.error(error);
+        }
     });
 }
 
