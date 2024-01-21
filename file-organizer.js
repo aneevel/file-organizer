@@ -3,7 +3,7 @@ const path = require('path');
 
 const basePath = 'C:\\';
 
-const fileExtensions = [ '.jpg', '.jpeg', '.png', '.gif'];
+const fileExtensions = [ '.jpg', '.jpeg', '.png', '.gif', '.webp'];
 
 if (process.argv.length !== 4)
 {
