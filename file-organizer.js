@@ -1,18 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const basePath = 'C:\\';
+const basePath = "C:\\";
+
+let inputDir = path.resolve(basePath, "Users\\Alec\\Downloads")
+let outputDir = path.resolve(basePath, "Users\\Alec\\images")
 
 const fileExtensions = [ '.jpg', '.jpeg', '.png', '.gif', '.webp'];
 
-if (process.argv.length !== 4)
-{
-    console.error("Invalid input: file-organizer must be invoked as `node file-organizer.js {inputDirectory} {outputDirectory}");
-    process.exit(1);
-}
-
-const inputDir = path.resolve(basePath, process.argv[2]);
-const outputDir = path.resolve(basePath, process.argv[3]);
+if (process.argv[2])
+    inputDir = path.resolve(basePath, process.argv[2]);
+if (process.argv[3])
+    outputDir = path.resolve(basePath, process.argv[3]);
 
 // Input directory must exist, or no processing can occur
 if (!fs.existsSync(inputDir))
