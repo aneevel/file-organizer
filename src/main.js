@@ -1,4 +1,18 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
+
+const Common = require('./common');
+
+const WelcomeWindow = require('./windows/controllers/welcome');
+
+class FileOrganizer {
+    constructor() {
+        this.welcomeWindow = null;
+    }
+
+    init() {
+        this.initApp();
+    }
+}
 
 const createWindow = () => {
     const window = new BrowserWindow({
