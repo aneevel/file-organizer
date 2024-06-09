@@ -8,7 +8,7 @@
   },
   "author": "Alec Neevel",
   "license": "MIT",
-  "bin": {
-      "org": "./cli.js"
+  "devDependencies": {
+    "electron": "^30.1.0"
   }
 }
