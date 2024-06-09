@@ -2,8 +2,9 @@
   "name": "file-organizer",
   "version": "1.0.0",
   "description": "A simple file organizer",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alec Neevel",
