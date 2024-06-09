@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alec Neevel",
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+      "org": "./cli.js"
+  }
 }
